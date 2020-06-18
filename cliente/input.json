@@ -68,5 +68,75 @@
         "Edad": 29,
         "Forma de contagio": "Comunitario",
         "Estado": "Activo"
+    },
+    {
+        "Nombre": "Antonio García",
+        "Departamento": "Alta Verapaz",
+        "Edad": 65,
+        "Forma de contagio": "Comunitario",
+        "Estado": "Activo"
+    },
+    {
+        "Nombre": "Isabel Martínez",
+        "Departamento": "Guatemala",
+        "Edad": 39,
+        "Forma de contagio": "Comunitario",
+        "Estado": "Activo"
+    },
+    {
+        "Nombre": "Carmen López",
+        "Departamento": "El progreso",
+        "Edad": 41,
+        "Forma de contagio": "Comunitario",
+        "Estado": "Activo"
+    },
+    {
+        "Nombre": "Francisco Sánchez",
+        "Departamento": "Guatemala",
+        "Edad": 19,
+        "Forma de contagio": "Comunitario",
+        "Estado": "Activo"
+    },
+    {
+        "Nombre": "Manuel González",
+        "Departamento": "Jutiapa",
+        "Edad": 33,
+        "Forma de contagio": "Comunitario",
+        "Estado": "Activo"
+    },
+    {
+        "Nombre": "Dolores Jimenez",
+        "Departamento": "Jutiapa",
+        "Edad": 87,
+        "Forma de contagio": "Comunitario",
+        "Estado": "Activo"
+    },
+    {
+        "Nombre": "Jesus Perez",
+        "Departamento": "Guatemala",
+        "Edad": 52,
+        "Forma de contagio": "Comunitario",
+        "Estado": "Activo"
+    },
+    {
+        "Nombre": "Pilar Moreno",
+        "Departamento": "El progreso",
+        "Edad": 34,
+        "Forma de contagio": "Comunitario",
+        "Estado": "Activo"
+    },
+    {
+        "Nombre": "David Navarro",
+        "Departamento": "Jutiapa",
+        "Edad": 22,
+        "Forma de contagio": "Comunitario",
+        "Estado": "Activo"
+    },
+    {
+        "Nombre": "Cristina Rodriguez",
+        "Departamento": "Guatemala",
+        "Edad": 29,
+        "Forma de contagio": "Comunitario",
+        "Estado": "Activo"
     }
 ]

@@ -19,13 +19,15 @@ type Person struct {
 	Estado        string `json:"Estado"`
 }
 
+// Sincronizar los hilos
 var wg sync.WaitGroup
-var num int
+
+// url : la ruta a la que deseamos enviar
+var url string
 
 func main() {
 	// path : ruta del archivo a leer
-	// url : la ruta a la que deseamos enviar
-	var path, url string
+	var path string
 
 	// threads : cantidad de hilos a utilizar para enviar
 	// amount : cantidad de datos del archivo que queremos enviar
@@ -68,53 +70,51 @@ func readFile(path string, threads int, amount int, url string) {
 	}
 
 	cant := amount / threads
-	threadsNumber(persons, cant, threads, url)
+	threadsNumber(persons, cant, threads)
 }
 
-func threadsNumber(persons []Person, cant int, threads int, url string) {
+func threadsNumber(persons []Person, cant int, threads int) {
+	fmt.Println(cant)
 	if threads == 1 {
-		mostrar(persons, 0, len(persons), url)
+		mostrar(persons, 0, len(persons))
 	} else if threads == 2 {
 		wg.Add(2)
-		go mostrar(persons, 0, cant, url)
-		go mostrar(persons, cant, len(persons), url)
+		go mostrar(persons, 0, cant)
+		go mostrar(persons, cant, len(persons))
 		wg.Wait()
 	} else if threads == 3 {
 		wg.Add(3)
-		go mostrar(persons, 0, cant, url)
-		go mostrar(persons, cant, cant*2, url)
-		go mostrar(persons, cant*2, len(persons), url)
+		go mostrar(persons, 0, cant)
+		go mostrar(persons, cant, cant*2)
+		go mostrar(persons, cant*2, len(persons))
 		wg.Wait()
 	} else if threads == 4 {
 		wg.Add(4)
-		go mostrar(persons, 0, cant, url)
-		go mostrar(persons, cant, cant*2, url)
-		go mostrar(persons, cant*2, cant*3, url)
-		go mostrar(persons, cant*3, len(persons), url)
+		go mostrar(persons, 0, cant)
+		go mostrar(persons, cant, cant*2)
+		go mostrar(persons, cant*2, cant*3)
+		go mostrar(persons, cant*3, len(persons))
 		wg.Wait()
 	} else if threads == 5 {
 		wg.Add(5)
-		go mostrar(persons, 0, cant, url)
-		go mostrar(persons, cant, cant*2, url)
-		go mostrar(persons, cant*2, cant*3, url)
-		go mostrar(persons, cant*3, cant*4, url)
-		go mostrar(persons, cant*4, len(persons), url)
+		go mostrar(persons, 0, cant)
+		go mostrar(persons, cant, cant*2)
+		go mostrar(persons, cant*2, cant*3)
+		go mostrar(persons, cant*3, cant*4)
+		go mostrar(persons, cant*4, len(persons))
 		wg.Wait()
 	}
 }
 
-func mostrar(persons []Person, init int, cant int, url string) {
+func mostrar(persons []Person, init int, cant int) {
 	for i := init; i < cant; i++ {
 		// Convertimos a json el objeto en turno
 		jsonData, _ := json.Marshal(persons[i])
 
 		// Hacemos la insersión en la ruta que nos dio el usuario y le mandamos el objeto json
-		response, err := http.Post(url, "application/json", bytes.NewBuffer(jsonData))
+		_, err := http.Post(url, "application/json", bytes.NewBuffer(jsonData))
 		if err != nil {
 			fmt.Printf("No se ha podido enviar la información: %s\n", err)
-		} else {
-			data, _ := ioutil.ReadAll(response.Body)
-			fmt.Println(data[0:0])
 		}
 		time.Sleep(time.Millisecond * 10)
 	}
