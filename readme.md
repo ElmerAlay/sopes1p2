@@ -106,6 +106,8 @@ go build app.go
 
 _Y ya podemos entrar al servidor con localhost_
 
+_El servidor corre en el puerto 3000_
+
 ## Construido con 🛠️
 
 * [visualstudio code](https://code.visualstudio.com/) - El editor de código utilizado
