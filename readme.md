@@ -38,58 +38,73 @@ _Cuando ejecutamos la aplicación nos pedirá unos datos que debemos llenar_
 
 ...
 Ingresa la url a dónde deseeas enviar los datos: http://104.154.87.38:3000/
+
 Ingresa la cantidad de hilos que desea utilizar: 3
+
 Ingresa la cantidad de datos que desea enviar: 20
+
 Ingresa la ruta del archivo: input.json
 ...
 
-_ En la url colocamos la url que deseamos, o podemos utilizar la que está en la carpeta web_
-_ Ingresamos la cantidad de hilos que queremos utilizar para estar mandando la información _
-_ La cantidad de datos totales que contiene el archivo de entrada _
-_ La ruta del archivo que queremos leer _
-_ El programá realiza las acciones necesarias _
+_En la url colocamos la url que deseamos, o podemos utilizar la que está en la carpeta web_
+
+_Ingresamos la cantidad de hilos que queremos utilizar para estar mandando la información_
+
+_La cantidad de datos totales que contiene el archivo de entrada_
+
+_La ruta del archivo que queremos leer_
+
+_El programá realiza las acciones necesaria _
 
 ## Servidor Web con Docker
-_ nos movemos a la carpeta llamada "web" _
-_ Allí encontraremos un archivo Dockerfile _
-_ corremos el siguiente comando _
+
+_nos movemos a la carpeta llamada "web"_
+
+_Allí encontraremos un archivo Dockerfile_
+
+_corremos el siguiente comando _
 
 ...
 docker build -t algun_nombre .
 ...
 
-_ Esto creará una imágen con el servidor listo para ser utilizado en un container _
-_ Ahora podemos crear el container _
+_Esto creará una imágen con el servidor listo para ser utilizado en un container_
+
+_Ahora podemos crear el container_
 
 ...
 docker run -p miPuerto:3000 --name miNombre nombreImagen
 ...
 
-_ Y ya podemos entrar al servidor _
+_Y ya podemos entrar al servidor_
 
 ## Servidor Web local
-_ nos movemos a la carpeta llamada "web" _
-_ corremos el siguiente comando _
+
+_nos movemos a la carpeta llamada "web"_
+
+_corremos el siguiente comando_
 
 ...
 go get -u github.com/gorilla/mux
 ...
 
-_ Esto instalará un paquete para poder crear el servidor _
-_ Ejecutamos la applicación _
+_Esto instalará un paquete para poder crear el servidor_
+
+_Ejecutamos la applicación_
 
 ...
 go run app.go
 ...
 
-_ O también construir el ejecutable _
+_O también construir el ejecutable_
 
 ...
 go build app.go
+
 ./app
 ...
 
-_ Y ya podemos entrar al servidor con localhost _
+_Y ya podemos entrar al servidor con localhost_
 
 ## Construido con 🛠️
 
