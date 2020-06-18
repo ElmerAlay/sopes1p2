@@ -37,6 +37,7 @@ go build cliente.go
 _Cuando ejecutamos la aplicación nos pedirá unos datos que debemos llenar_
 
 ...
+
 Ingresa la url a dónde deseeas enviar los datos: http://104.154.87.38:3000/
 
 Ingresa la cantidad de hilos que desea utilizar: 3
@@ -44,6 +45,7 @@ Ingresa la cantidad de hilos que desea utilizar: 3
 Ingresa la cantidad de datos que desea enviar: 20
 
 Ingresa la ruta del archivo: input.json
+
 ...
 
 _En la url colocamos la url que deseamos, o podemos utilizar la que está en la carpeta web_
