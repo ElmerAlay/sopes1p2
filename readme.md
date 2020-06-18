@@ -6,8 +6,10 @@ _Como consumir una api utilizando GO como cliente_
 
 ### Pre-requisitos 📋
 
-_ Tener GO instalado _
+_Tener GO instalado_
+
 _ Tener Docker instalado (Opcional), sólo si se va a utilizar el servidor de ejemplo _
+
 _ En la página oficial están los pasos de instalación _
 
 ### Instalación 🔧
