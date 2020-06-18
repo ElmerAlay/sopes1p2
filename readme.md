@@ -8,18 +8,22 @@ _Como consumir una api utilizando GO como cliente_
 
 _Tener GO instalado_
 
-_ Tener Docker instalado (Opcional), sólo si se va a utilizar el servidor de ejemplo _
+_Tener Docker instalado (Opcional), sólo si se va a utilizar el servidor de ejemplo_
 
-_ En la página oficial están los pasos de instalación _
+_En la página oficial están los pasos de instalación_
 
 ### Instalación 🔧
-_ Abre una terminal en donde se encuentra la carpeta con la aplicación _
-_ Entrar en la carpeta "cliente" _
-_ Ejecutar el siguiente comando _
+
+_Abre una terminal en donde se encuentra la carpeta con la aplicación_
+
+_Entrar en la carpeta "cliente"_
+
+_Ejecutar el siguiente comando_
 
 ```
 go run cliente.go
 ```
+
 _También se puede de la siguiente forma para obtener el ejecutable_
 
 ```
