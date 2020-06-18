@@ -28,13 +28,13 @@ _También se puede de la siguiente forma para obtener el ejecutable_
 
 ```
 go build cliente.go
-```
-...
+
 ./cliente
-...
+```
 
 ## Ejemplo de uso
-_ Cuando ejecutamos la aplicación nos pedirá unos datos que debemos llenar _
+
+_Cuando ejecutamos la aplicación nos pedirá unos datos que debemos llenar_
 
 ...
 Ingresa la url a dónde deseeas enviar los datos: http://104.154.87.38:3000/
