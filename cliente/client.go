@@ -69,31 +69,43 @@ func readFile(path string, threads int, amount int, url string) {
 		panic(err2)
 	}
 
+	aux := len(persons)
+	j := 0
+
+	for i := len(persons); i < amount; i++ {
+		persons = append(persons, persons[j])
+		j++
+
+		if j == aux {
+			j = 0
+		}
+	}
+
 	cant := amount / threads
-	threadsNumber(persons, cant, threads)
+	threadsNumber(persons, cant, threads, amount)
 }
 
-func threadsNumber(persons []Person, cant int, threads int) {
-	fmt.Println(cant)
+func threadsNumber(persons []Person, cant int, threads int, amount int) {
+	//fmt.Println(cant)
 	if threads == 1 {
-		mostrar(persons, 0, len(persons))
+		mostrar(persons, 0, amount)
 	} else if threads == 2 {
 		wg.Add(2)
 		go mostrar(persons, 0, cant)
-		go mostrar(persons, cant, len(persons))
+		go mostrar(persons, cant, amount)
 		wg.Wait()
 	} else if threads == 3 {
 		wg.Add(3)
 		go mostrar(persons, 0, cant)
 		go mostrar(persons, cant, cant*2)
-		go mostrar(persons, cant*2, len(persons))
+		go mostrar(persons, cant*2, amount)
 		wg.Wait()
 	} else if threads == 4 {
 		wg.Add(4)
 		go mostrar(persons, 0, cant)
 		go mostrar(persons, cant, cant*2)
 		go mostrar(persons, cant*2, cant*3)
-		go mostrar(persons, cant*3, len(persons))
+		go mostrar(persons, cant*3, amount)
 		wg.Wait()
 	} else if threads == 5 {
 		wg.Add(5)
@@ -101,7 +113,7 @@ func threadsNumber(persons []Person, cant int, threads int) {
 		go mostrar(persons, cant, cant*2)
 		go mostrar(persons, cant*2, cant*3)
 		go mostrar(persons, cant*3, cant*4)
-		go mostrar(persons, cant*4, len(persons))
+		go mostrar(persons, cant*4, amount)
 		wg.Wait()
 	}
 }
