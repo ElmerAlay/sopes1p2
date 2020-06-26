@@ -1,17 +1,25 @@
+require("dotenv").config()
+
 const redis = require("redis")
 const client = redis.createClient({
-    port      : 6379,               
-    host      : '35.192.186.35'
+    port      : process.env.REDIS_PORT,               
+    host      : process.env.REDIS_HOST,
+    password  : process.env.REDIS_PASSWORD
   })
 
 const get = (req, res) => {
     let c1 = 0, c2=0, c3=0, c4=0, c5=0, c6=0, c7=0, c8=0, c9=0, c10=0, c11 = 0
 
-    client.LRANGE('ages',0,-1,function(err, value) {
+    client.LRANGE(process.env.REDIS_LIST,0,-1,function(err, value) {
         if (err) { 
           throw err;
         } else {
+
             for(i=0; i<value.length; i++){
+                value[i]=JSON.parse(value[i])
+            }
+            res.json(value)
+            /*for(i=0; i<value.length; i++){
                 value[i] = Number(value[i])
                 if(value[i]<11)
                     c1++
@@ -49,7 +57,7 @@ const get = (req, res) => {
                 menor90: c9,
                 menor100: c10,
                 mayor100: c11
-            })
+            })*/
         }
     })
 }

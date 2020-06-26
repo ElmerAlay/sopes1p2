@@ -1,3 +1,4 @@
+require("dotenv").config()
 const express = require("express");
 const { json } = require("express");
 const mongoose = require("mongoose")
@@ -6,12 +7,14 @@ const Routes = require("./routes/routes");
 
 const app = express();
 
-mongoose.connect("mongodb://35.192.186.35:27017/",{
-   dbName: "persons",
+mongoose.connect("mongodb://"+process.env.MONGO_HOST+":"+process.env.MONGO_PORT+"/",{
+   dbName: process.env.MONGO_DB,
+   user: process.env.MONGO_USER,
+   pass: process.env.MONGO_PASSWORD,
    useNewUrlParser: true,
    useUnifiedTopology: true
 })
-.then(db => console.log("Db connected!"))
+.then(db => console.log("Db Mongo connected!"))
 .catch(err => console.log(err))
 
 app.use(function(req, res, next) {

@@ -1,3 +1,4 @@
+require("dotenv").config()
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
@@ -9,4 +10,4 @@ const personSchema = new Schema({
     Estado: String
 })
 
-module.exports = mongoose.model("persons", personSchema)
+module.exports = mongoose.model(process.env.MONGO_COLLECTION, personSchema)
