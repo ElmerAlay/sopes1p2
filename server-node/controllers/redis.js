@@ -14,12 +14,7 @@ const get = (req, res) => {
         if (err) { 
           throw err;
         } else {
-
             for(i=0; i<value.length; i++){
-                value[i]=JSON.parse(value[i])
-            }
-            res.json(value)
-            /*for(i=0; i<value.length; i++){
                 value[i] = Number(value[i])
                 if(value[i]<11)
                     c1++
@@ -57,13 +52,13 @@ const get = (req, res) => {
                 menor90: c9,
                 menor100: c10,
                 mayor100: c11
-            })*/
+            })
         }
     })
 }
 
 const getLast = (req, res) => {
-    client.HGETALL("person1", (err, values)=>{
+    client.HGETALL(process.env.REDIS_HASH, (err, values)=>{
         if (err) { 
             throw err;
         } else {
