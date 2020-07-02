@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Casos de Coronavirus</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.js"></script>
+</head>
+<body class="bg-transparent">
+    <br>
+    <div class="container bg-gradient-info">
+        <h1 align="center" class="text-primary">Estadísticas Coronavirus En Guatemala</h1>
+    </div>
+    
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="container">
+                    <h2 class="text-primary" align="center">Todos Los Casos</h2>
+                </div>
+                <div class="container ">
+                    <table class="table table-hover" id="our-table">
+                        <thead class="table-success">
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Edad</th>
+                                <th>Departmaneto</th>
+                                <th>Forma de Contagio</th>
+                                <th>Estado</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body" class="">
+                        </tbody>
+                    </table>
+                </div>
+                <div class="container mx-auto">
+                    <div id="pagination-wrapper" align="center" class="mx-auto"></div>
+                </div>
+            </div>
+            <div class="col">
+                <h2 class="text-primary" align="center">Departamentos Infectados</h2>
+                <canvas id="pie"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <div class="container">
+                    <h2 class="text-primary" align="center">Top 3</h2>
+                </div>
+                <div class="container ">
+                    <table class="table table-hover" id="our-table">
+                        <thead class="table-success">
+                            <tr>
+                                <th>Departmaneto</th>
+                                <th>Cantidad</th>
+                            </tr>
+                        </thead>
+                        <tbody id="table-body2" class="">
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="col">
+                <h2 class="text-primary" align="center">Rango de Edades</h2>
+                <canvas id="bar"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <br>
+
+    <div class="row">
+        <div class="col">
+            <div class="container">
+                <h2 class="text-primary" align="center">Último Caso Agregado</h2>
+            </div>
+            <div class="container ">
+                <table class="table table-hover" id="our-table">
+                    <thead class="table-success">
+                        <tr>
+                            <th>Nombre</th>
+                            <th>Edad</th>
+                            <th>Departmaneto</th>
+                            <th>Forma de Contagio</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="table-body3" class="">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="./index.js"></script>
+    <script src="./graphics.js"></script>
+</body>
+</html>
